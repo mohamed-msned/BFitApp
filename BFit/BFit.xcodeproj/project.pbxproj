@@ -74,11 +74,9 @@
 				044CAF4127849EAA0042EC19 /* Model */,
 				044CAF4227849EB90042EC19 /* View */,
 				044CAF4027849E8D0042EC19 /* Controller */,
-				044CAF30278466080042EC19 /* Main.storyboard */,
-				044CAF33278466150042EC19 /* Assets.xcassets */,
-				044CAF35278466150042EC19 /* LaunchScreen.storyboard */,
-				044CAF38278466150042EC19 /* Info.plist */,
 				044CAF3E27846FE80042EC19 /* GoogleService-Info.plist */,
+				044CAF33278466150042EC19 /* Assets.xcassets */,
+				044CAF38278466150042EC19 /* Info.plist */,
 			);
 			path = BFit;
 			sourceTree = "<group>";
@@ -103,6 +101,8 @@
 		044CAF4227849EB90042EC19 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				044CAF30278466080042EC19 /* Main.storyboard */,
+				044CAF35278466150042EC19 /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";

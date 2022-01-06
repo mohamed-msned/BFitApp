@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SignUpTraineeViewController: UIViewController {
 
@@ -69,6 +70,19 @@ class SignUpTraineeViewController: UIViewController {
         appleSignUpBtn.setImage(UIImage(named: "Picture3"), for: .normal)
         appleSignUpBtn.layer.cornerRadius = 20
         
+    }
+    
+    
+    @IBAction func signUpBtnClicked(_ sender: Any) {
+        Auth.auth().createUser(withEmail: emailTextfield.text!, password: PasswordTextfield.text!) { authResult, error in
+            if error == nil {
+                print("signed up succesfullly!")
+                let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+                self.present(nextVC, animated: true, completion: nil)
+            }else {
+                print(error?.localizedDescription)
+            }
+        }
     }
     
     
