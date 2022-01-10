@@ -6,13 +6,14 @@
 //
 
 import UIKit
-
+import Firebase
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var mainImage: UIImageView!
     
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
+    @IBOutlet weak var skipLoginBtn: UIButton!
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var googleLoginBtn: UIButton!
     @IBOutlet weak var appleLoginBtn: UIButton!
@@ -46,6 +47,13 @@ class LoginViewController: UIViewController {
         passwordTextfield.layer.borderWidth = 2.0
         passwordTextfield.layer.borderColor = UIColor.black.cgColor
         
+        
+        //Skip login button
+        skipLoginBtn.clipsToBounds = true
+        skipLoginBtn.layer.cornerRadius = 15.0
+        skipLoginBtn.layer.borderWidth = 2.0
+        skipLoginBtn.layer.borderColor = UIColor.black.cgColor
+        
         //signUp button
         loginBtn.clipsToBounds = true
         loginBtn.layer.cornerRadius = 20
@@ -62,6 +70,25 @@ class LoginViewController: UIViewController {
         appleLoginBtn.setImage(UIImage(named: "Picture3"), for: .normal)
         appleLoginBtn.layer.cornerRadius = 20
     }
+    @IBAction func loginBtnClicked(_ sender: Any) {
+        
+        Auth.auth().signIn(withEmail: emailTextfield.text!, password: passwordTextfield.text!) { authResult, error in
+            if error == nil {
+                let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "TraineeTabBarController") as! TraineeTabBarController
+                self.present(nextVC, animated: true, completion: nil)
+            }else {
+                print(error?.localizedDescription)
+                return
+            }
+        }
+
+    }
+    
+    @IBAction func skipLoginBtnClicked(_ sender: Any) {
+        let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "TraineeTabBarController") as! TraineeTabBarController
+        self.present(nextVC, animated: true, completion: nil)
+    }
+    
     
 
 }

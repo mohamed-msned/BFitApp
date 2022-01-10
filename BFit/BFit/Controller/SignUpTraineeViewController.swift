@@ -85,6 +85,10 @@ class SignUpTraineeViewController: UIViewController {
         }
     }
     
+    @IBAction func moveToLoginBtnClicked(_ sender: Any) {
+        performSegue(withIdentifier: "moveLogin", sender: nil)
+    }
+    
     
 
 
