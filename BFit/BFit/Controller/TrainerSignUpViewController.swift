@@ -20,6 +20,11 @@ class TrainerSignUpViewController: UIViewController {
     @IBOutlet weak var passwordVerfTextfield: UITextField!
     @IBOutlet weak var signUpBtn: UIButton!
     
+    @IBOutlet weak var dayTextField: UITextField!
+    @IBOutlet weak var monthTextfield: UITextField!
+    @IBOutlet weak var yearTextfield: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -51,6 +56,21 @@ class TrainerSignUpViewController: UIViewController {
         phoneNumberTextfield.layer.borderWidth = 2.0
         phoneNumberTextfield.layer.borderColor = UIColor.black.cgColor
         
+        //birth day textfields
+        dayTextField.clipsToBounds = true
+        dayTextField.layer.cornerRadius = 15.0
+        dayTextField.layer.borderWidth = 2.0
+        dayTextField.layer.borderColor = UIColor.black.cgColor
+        
+        monthTextfield.clipsToBounds = true
+        monthTextfield.layer.cornerRadius = 15.0
+        monthTextfield.layer.borderWidth = 2.0
+        monthTextfield.layer.borderColor = UIColor.black.cgColor
+        
+        yearTextfield.clipsToBounds = true
+        yearTextfield.layer.cornerRadius = 15.0
+        yearTextfield.layer.borderWidth = 2.0
+        yearTextfield.layer.borderColor = UIColor.black.cgColor
         
         //password textfield
         passwordTextfield.clipsToBounds = true

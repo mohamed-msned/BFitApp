@@ -19,6 +19,8 @@
 		04F2AE332786DC3100BD5D7B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F2AE322786DC3100BD5D7B /* HomeViewController.swift */; };
 		04F2AE352786E18A00BD5D7B /* TraineeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F2AE342786E18A00BD5D7B /* TraineeTabBarController.swift */; };
 		04F2AE372786FA8400BD5D7B /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F2AE362786FA8300BD5D7B /* HomeTableViewCell.swift */; };
+		04F2AE3B278C58C600BD5D7B /* TrainerProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F2AE3A278C58C600BD5D7B /* TrainerProfileViewController.swift */; };
+		04F2AE3D278F139900BD5D7B /* TrainerProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F2AE3C278F139900BD5D7B /* TrainerProfileTableViewCell.swift */; };
 		8F8827BE47A89500E77F6C75 /* Pods_BFit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C7C19D93453C07DCB2066DA /* Pods_BFit.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +39,8 @@
 		04F2AE322786DC3100BD5D7B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		04F2AE342786E18A00BD5D7B /* TraineeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraineeTabBarController.swift; sourceTree = "<group>"; };
 		04F2AE362786FA8300BD5D7B /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		04F2AE3A278C58C600BD5D7B /* TrainerProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerProfileViewController.swift; sourceTree = "<group>"; };
+		04F2AE3C278F139900BD5D7B /* TrainerProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerProfileTableViewCell.swift; sourceTree = "<group>"; };
 		4D9EA14F444E24F133E45968 /* Pods-BFit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BFit.debug.xcconfig"; path = "Target Support Files/Pods-BFit/Pods-BFit.debug.xcconfig"; sourceTree = "<group>"; };
 		4F44D7A55C7C257EE802FC43 /* Pods-BFit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BFit.release.xcconfig"; path = "Target Support Files/Pods-BFit/Pods-BFit.release.xcconfig"; sourceTree = "<group>"; };
 		6C7C19D93453C07DCB2066DA /* Pods_BFit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BFit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +100,8 @@
 				04F2AE342786E18A00BD5D7B /* TraineeTabBarController.swift */,
 				04F2AE322786DC3100BD5D7B /* HomeViewController.swift */,
 				04F2AE362786FA8300BD5D7B /* HomeTableViewCell.swift */,
+				04F2AE3A278C58C600BD5D7B /* TrainerProfileViewController.swift */,
+				04F2AE3C278F139900BD5D7B /* TrainerProfileTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -252,9 +258,11 @@
 				044CAF2F278466080042EC19 /* SignUpTraineeViewController.swift in Sources */,
 				044CAF2B278466080042EC19 /* AppDelegate.swift in Sources */,
 				04F2AE2D2785A80F00BD5D7B /* TrainerSignUpViewController.swift in Sources */,
+				04F2AE3D278F139900BD5D7B /* TrainerProfileTableViewCell.swift in Sources */,
 				04F2AE2F2785DF7C00BD5D7B /* LoginViewController.swift in Sources */,
 				044CAF2D278466080042EC19 /* SceneDelegate.swift in Sources */,
 				04F2AE332786DC3100BD5D7B /* HomeViewController.swift in Sources */,
+				04F2AE3B278C58C600BD5D7B /* TrainerProfileViewController.swift in Sources */,
 				04F2AE372786FA8400BD5D7B /* HomeTableViewCell.swift in Sources */,
 				04F2AE352786E18A00BD5D7B /* TraineeTabBarController.swift in Sources */,
 			);
