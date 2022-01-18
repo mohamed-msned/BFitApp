@@ -18,6 +18,10 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var googleLoginBtn: UIButton!
     @IBOutlet weak var appleLoginBtn: UIButton!
     
+    let db = Firestore.firestore()
+    var typeOfTrainer = ""
+    var typeOfTrainee = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -71,22 +75,74 @@ class LoginViewController: UIViewController {
         appleLoginBtn.layer.cornerRadius = 20
     }
     @IBAction func loginBtnClicked(_ sender: Any) {
-        
+        print("111111111111")
+        getTrainerInfo()
+        print("2222222222")
+        getTraineeInfo()
+        print("3333333333")
+        if typeOfTrainee == "Trainee" {
+            print("44444444444")
         Auth.auth().signIn(withEmail: emailTextfield.text!, password: passwordTextfield.text!) { authResult, error in
             if error == nil {
                 let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "TraineeTabBarController") as! TraineeTabBarController
                 self.present(nextVC, animated: true, completion: nil)
             }else {
                 print(error?.localizedDescription)
-                return
+                
             }
         }
-
+        }else if typeOfTrainer == "Trainer"{
+            print("555555555")
+            Auth.auth().signIn(withEmail: emailTextfield.text!, password: passwordTextfield.text!) { authResult, error in
+                if error == nil {
+                    let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "TrainerTabBarController") as! TrainerTabBarController
+                    self.present(nextVC, animated: true, completion: nil)
+                }else {
+                    print(error?.localizedDescription)
+                    
+                }
+            }
+        }
     }
     
     @IBAction func skipLoginBtnClicked(_ sender: Any) {
         let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "TraineeTabBarController") as! TraineeTabBarController
         self.present(nextVC, animated: true, completion: nil)
+    }
+    
+    func getTrainerInfo() {
+        db.collection("Personal Trainers")
+            .whereField("Email", isEqualTo: emailTextfield.text!)
+            .getDocuments() {
+                
+                (querySnapshot, error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                }else {
+                    for document in querySnapshot!.documents {
+                        let data = document.data()
+                        self.typeOfTrainer = data["Type"] as? String ?? "_"
+                    }
+                }
+                
+            }
+    }
+    func getTraineeInfo(){
+        db.collection("Trainees")
+            .whereField("Email", isEqualTo: emailTextfield.text!)
+            .getDocuments() {
+                
+                (querySnapshot, error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                }else {
+                    for document in querySnapshot!.documents {
+                        let data = document.data()
+                        self.typeOfTrainee = data["Type"] as? String ?? "_"
+                    }
+                }
+                
+            }
     }
     
     

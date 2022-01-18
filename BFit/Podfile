@@ -9,4 +9,7 @@ target 'BFit' do
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage'
+  pod 'DropDown'
+  pod 'SCLAlertView'
+  
 end

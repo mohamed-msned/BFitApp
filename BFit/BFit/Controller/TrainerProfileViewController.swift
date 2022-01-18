@@ -13,6 +13,7 @@ class TrainerProfileViewController: UIViewController {
     @IBOutlet weak var workoutTableView: UITableView!
     @IBOutlet weak var ButtonView: UIView!
     @IBOutlet weak var trainerDescription: UITextView!
+    @IBOutlet weak var saveBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,11 @@ class TrainerProfileViewController: UIViewController {
         
         //description text view
     }
+    
+    @IBAction func saveBrnClicked(_ sender: Any) {
+        
+    }
+    
 
 }
 

@@ -18,6 +18,7 @@ class SignUpTraineeViewController: UIViewController {
     @IBOutlet weak var googleSignUpBtn: UIButton!
     @IBOutlet weak var appleSignUpBtn: UIButton!
     
+    let db = Firestore.firestore()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -72,22 +73,58 @@ class SignUpTraineeViewController: UIViewController {
         
     }
     
+//    func setData() {
+//        db.collection("Users")
+//                .document("order1").setData(
+//                    [
+//                        "orderId" : "73246891",
+//                        "Date" : "2021-12-9",
+//                        "address" : "Riyadh"
+//
+//                    ])
+//            {(error) in
+//                if error == nil {
+//                    print("Added Succ..")
+//                }else {
+//                    print(error?.localizedDescription)
+//                }
+//            }
+//    }
+    
     
     @IBAction func signUpBtnClicked(_ sender: Any) {
         Auth.auth().createUser(withEmail: emailTextfield.text!, password: PasswordTextfield.text!) { authResult, error in
             if error == nil {
                 print("signed up succesfullly!")
                 let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+                
                 self.present(nextVC, animated: true, completion: nil)
+                
+                self.db.collection("Trainees")
+                    .document(self.emailTextfield.text!)
+                    .setData([
+                        "Email": self.emailTextfield.text!,
+                        "Type": "Trainee",
+                        "TraineeID": Auth.auth().currentUser!.uid
+                    ]) { err in
+                        if let err = err {
+                            print("Error when adding \(err.localizedDescription)")
+                        }else {
+                            print("document added")
+                        }
+                    }
             }else {
                 print(error?.localizedDescription)
             }
         }
+        
     }
     
     @IBAction func moveToLoginBtnClicked(_ sender: Any) {
         performSegue(withIdentifier: "moveLogin", sender: nil)
     }
+    
+    
     
     
 

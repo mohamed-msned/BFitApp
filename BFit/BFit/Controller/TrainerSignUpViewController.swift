@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Firebase
+import DropDown
 
 class TrainerSignUpViewController: UIViewController {
 
@@ -24,12 +26,18 @@ class TrainerSignUpViewController: UIViewController {
     @IBOutlet weak var monthTextfield: UITextField!
     @IBOutlet weak var yearTextfield: UITextField!
     
+    @IBOutlet weak var viewForGenderDropDown: UIView!
+    @IBOutlet weak var genderButtonDropDown: UIButton!
+    @IBOutlet weak var genderDropDownLable: UILabel!
     
+    let genderDropDown = DropDown()
+    let genderDropDownValues = ["Male", "Female"]
+    let db = Firestore.firestore()
     override func viewDidLoad() {
         super.viewDidLoad()
         
         viewLayout()
-       
+        genderDropDownLayout()
     }
     
 
@@ -87,7 +95,69 @@ class TrainerSignUpViewController: UIViewController {
         //sign up button
         signUpBtn.clipsToBounds = true
         signUpBtn.layer.cornerRadius = 20
+        
+        // drop down view
+        viewForGenderDropDown.clipsToBounds = true
+        viewForGenderDropDown.layer.cornerRadius = 15
+        viewForGenderDropDown.layer.borderWidth = 2.0
+        viewForGenderDropDown.layer.borderColor = UIColor.black.cgColor
     }
    
+    @IBAction func signUpClicked(_ sender: Any) {
+        Auth.auth().createUser(withEmail: emailTextfield.text!, password: passwordTextfield.text!) { authResult, error in
+            if error == nil {
+                print("signed up succesfullly!")
+                let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+                self.present(nextVC, animated: true, completion: nil)
+                
+                self.db.collection("Personal Trainers")
+                    .document(self.emailTextfield.text!)
+                    .setData([
+                        "Email": self.emailTextfield.text!,
+                        "Full name": self.fullNametextfield.text!,
+                        "Phone number": self.phoneNumberTextfield.text!,
+                        "Description": "",
+                        "Day": self.dayTextField.text!,
+                        "Month": self.monthTextfield.text!,
+                        "Year": self.yearTextfield.text!,
+                        "Gender": self.genderDropDownLable.text!,
+                        "Type": "Trainer",
+                        "TrainerID": Auth.auth().currentUser!.uid
+                    ]) { err in
+                        if let err = err {
+                            print("Error when adding \(err.localizedDescription)")
+                        }else {
+                            print("document added")
+                        }
+                    }
+            }else {
+                print(error?.localizedDescription)
+            }
+        }
+        
+        
+        
+        
+    }
+    
+    func genderDropDownLayout(){
+        
+        genderDropDownLable.text = "Gender"
+        genderDropDown.anchorView = viewForGenderDropDown
+        genderDropDown.dataSource = genderDropDownValues
+        genderDropDown.bottomOffset = CGPoint(x: 0, y:(genderDropDown.anchorView?.plainView.bounds.height)!)
+        genderDropDown.topOffset = CGPoint(x: 0, y:-(genderDropDown.anchorView?.plainView.bounds.height)!)
+        genderDropDown.direction = .bottom
+        genderDropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            print("Selected item: \(item) at index: \(index)")
+            self.genderDropDownLable.text = genderDropDownValues[index]
+        }
+    }
+    
+    @IBAction func genderDropDownBtnClicked(_ sender: Any) {
+        genderDropDown.show()
 
+    }
+    
+    
 }
