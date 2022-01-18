@@ -145,6 +145,11 @@ class LoginViewController: UIViewController {
             }
     }
     
+    @IBAction func moveToSignUp(_ sender: Any) {
+        let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "SignUpTraineeViewController") as! SignUpTraineeViewController
+        self.present(nextVC, animated: true, completion: nil)
+
+    }
     
 
 }

@@ -158,6 +158,14 @@ class TrainerSignUpViewController: UIViewController {
         genderDropDown.show()
 
     }
+    @IBAction func moveToLogin(_ sender: Any) {
+        let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        self.present(nextVC, animated: true, completion: nil)
+    }
+    @IBAction func moveToTraineeSignUp(_ sender: Any) {
+        let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "SignUpTraineeViewController") as! SignUpTraineeViewController
+        self.present(nextVC, animated: true, completion: nil)
+    }
     
     
 }

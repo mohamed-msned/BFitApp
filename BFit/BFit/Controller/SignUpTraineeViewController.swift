@@ -23,8 +23,6 @@ class SignUpTraineeViewController: UIViewController {
         super.viewDidLoad()
         
         viewLayout()
-        
-
     }
     
     
@@ -124,6 +122,10 @@ class SignUpTraineeViewController: UIViewController {
         performSegue(withIdentifier: "moveLogin", sender: nil)
     }
     
+    @IBAction func moveToTrainerSignUp(_ sender: Any) {
+        let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "TrainerSignUpViewController") as! TrainerSignUpViewController
+        self.present(nextVC, animated: true, completion: nil)
+    }
     
     
     

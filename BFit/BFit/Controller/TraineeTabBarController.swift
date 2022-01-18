@@ -12,7 +12,7 @@ class TraineeTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
+        
     }
 
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aF6-b6-FhV">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
@@ -12,7 +12,7 @@
         <!--Trainer Sign Up View Controller-->
         <scene sceneID="bE0-A6-Z2B">
             <objects>
-                <viewController id="aF6-b6-FhV" customClass="TrainerSignUpViewController" customModule="BFit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TrainerSignUpViewController" modalPresentationStyle="fullScreen" id="aF6-b6-FhV" customClass="TrainerSignUpViewController" customModule="BFit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cG3-RV-7Es">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -97,6 +97,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Login">
                                     <color key="baseForegroundColor" name="AccentColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="moveToLogin:" destination="aF6-b6-FhV" eventType="touchUpInside" id="he3-05-aSX"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Are you a trainee? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkt-Fq-G7n">
                                 <rect key="frame" x="39" y="838" width="120" height="17"/>
@@ -119,6 +122,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Press here to sign up">
                                     <color key="baseForegroundColor" name="AccentColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="moveToTraineeSignUp:" destination="aF6-b6-FhV" eventType="touchUpInside" id="6bm-CA-H2H"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="yyyy" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KF8-LX-tn5">
                                 <rect key="frame" x="199" y="537" width="99" height="56"/>
@@ -254,21 +260,13 @@
                                     <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Already have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IiS-M6-7e9">
-                                <rect key="frame" x="20" y="845" width="166" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="don't you have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IiS-M6-7e9">
+                                <rect key="frame" x="20" y="845" width="178" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFF-K0-CTI">
-                                <rect key="frame" x="177" y="838" width="164" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="SignUp">
-                                    <color key="baseForegroundColor" name="AccentColor"/>
-                                </buttonConfiguration>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l3c-1a-7gQ">
                                 <rect key="frame" x="138" y="613" width="139" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -279,6 +277,17 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="skipLoginBtnClicked:" destination="ozx-CU-9Fa" eventType="touchUpInside" id="f5Y-8g-qEi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFF-K0-CTI">
+                                <rect key="frame" x="204" y="838" width="164" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="SignUp">
+                                    <color key="baseForegroundColor" name="AccentColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="moveToSignUp:" destination="ozx-CU-9Fa" eventType="touchUpInside" id="FPy-uI-i98"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -430,6 +439,9 @@
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="Plus" title=""/>
+                                                        <connections>
+                                                            <action selector="addPackegeBtnClicked:" destination="Uv5-vw-Ihk" eventType="touchUpInside" id="4WP-Ej-JvR"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" name="Dark"/>
@@ -515,7 +527,7 @@
         <!--Create Packege View Controller-->
         <scene sceneID="Kja-sv-hWA">
             <objects>
-                <viewController id="Qwa-Wz-Nyr" customClass="CreatePackegeViewController" customModule="BFit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreatePackegeViewController" id="Qwa-Wz-Nyr" customClass="CreatePackegeViewController" customModule="BFit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2tM-oI-E63">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1550"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1251,10 +1263,131 @@
             </objects>
             <point key="canvasLocation" x="4586.9565217391309" y="83.705357142857139"/>
         </scene>
+        <!--Workout View Controller-->
+        <scene sceneID="5sJ-vL-fW6">
+            <objects>
+                <viewController id="GG6-8Q-2XS" customClass="WorkoutViewController" customModule="BFit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="elA-mV-Ve9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="glI-Ri-DUL">
+                                <rect key="frame" x="20" y="115" width="374" height="295"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="31" id="4RU-Gz-M2u" customClass="WorkoutTableViewCell" customModule="BFit" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="374" height="31"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4RU-Gz-M2u" id="UXF-vj-7JI">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="31"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pnn-ur-GRq">
+                                                    <rect key="frame" x="20" y="5" width="64" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" name="barItems"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WwQ-F3-GIY">
+                                                    <rect key="frame" x="141" y="5" width="93" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" name="fixedOrange"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1oC-NK-b2o">
+                                                    <rect key="frame" x="319" y="0.0" width="44" height="31"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="tintColor" name="fixedOrange"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="info.circle.fill" catalog="system" title=""/>
+                                                    <connections>
+                                                        <action selector="moreInfoBtnClicked:" destination="4RU-Gz-M2u" eventType="touchUpInside" id="cDF-Wx-wu7"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dayLable" destination="Pnn-ur-GRq" id="mkd-nK-dgW"/>
+                                            <outlet property="moreInfoBtn" destination="1oC-NK-b2o" id="T0Y-8e-miu"/>
+                                            <outlet property="titleLable" destination="WwQ-F3-GIY" id="dX6-Ra-WJd"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="GG6-8Q-2XS" id="0b5-RS-Opj"/>
+                                    <outlet property="delegate" destination="GG6-8Q-2XS" id="ndw-VJ-1Gs"/>
+                                </connections>
+                            </tableView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="9v2-VK-Khl">
+                                <rect key="frame" x="20" y="485" width="374" height="295"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="31" id="maN-n9-Nql" customClass="MealsTableViewCell" customModule="BFit" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="374" height="31"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="maN-n9-Nql" id="qt9-Oc-lW3">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="31"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e36-h1-6vy">
+                                                    <rect key="frame" x="20" y="5" width="64" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" name="barItems"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIs-od-pI3">
+                                                    <rect key="frame" x="141" y="5" width="93" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" name="fixedOrange"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ugt-4H-tjH">
+                                                    <rect key="frame" x="319" y="0.0" width="44" height="31"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="tintColor" name="fixedOrange"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="info.circle.fill" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="moreInfoBtnClicked:" destination="maN-n9-Nql" eventType="touchUpInside" id="5tS-1s-wAw"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dayLable" destination="e36-h1-6vy" id="boY-ms-yTy"/>
+                                            <outlet property="moreInfoBtn" destination="Ugt-4H-tjH" id="UVF-1B-gDF"/>
+                                            <outlet property="titleLable" destination="mIs-od-pI3" id="xbB-vb-DU8"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="GG6-8Q-2XS" id="CoK-9F-NO4"/>
+                                    <outlet property="delegate" destination="GG6-8Q-2XS" id="f8n-ho-1wZ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1kM-a9-v9b"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="mealsTable" destination="9v2-VK-Khl" id="nkk-ur-n3t"/>
+                        <outlet property="workoutTable" destination="glI-Ri-DUL" id="8zl-de-eze"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="smZ-hc-KrQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5502.898550724638" y="83.705357142857139"/>
+        </scene>
         <!--Sign Up Trainee View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SignUpTraineeViewController" customModule="BFit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpTraineeViewController" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="SignUpTraineeViewController" customModule="BFit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1331,6 +1464,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Press here to sign up">
                                     <color key="baseForegroundColor" name="AccentColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="moveToTrainerSignUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wd9-ho-UWc"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Are you a personal trainer? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1IS-DC-EeH">
                                 <rect key="frame" x="28" y="845" width="177" height="17"/>
