@@ -14,7 +14,7 @@ class WorkoutViewController: UIViewController {
     @IBOutlet weak var mealsTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.hideKeyboardWhenTappedAround()
         // Do any additional setup after loading the view.
     }
     

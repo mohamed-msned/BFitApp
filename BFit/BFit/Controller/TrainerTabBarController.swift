@@ -11,7 +11,7 @@ class TrainerTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.hideKeyboardWhenTappedAround()
 
 
     }

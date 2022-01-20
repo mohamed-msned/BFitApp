@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import SCLAlertView
 
 class SignUpTraineeViewController: UIViewController {
 
@@ -23,6 +24,7 @@ class SignUpTraineeViewController: UIViewController {
         super.viewDidLoad()
         
         viewLayout()
+        self.hideKeyboardWhenTappedAround()
     }
     
     
@@ -112,7 +114,10 @@ class SignUpTraineeViewController: UIViewController {
                         }
                     }
             }else {
-                print(error?.localizedDescription)
+                
+                SCLAlertView().showError("Error", subTitle: error!.localizedDescription)
+                
+               
             }
         }
         

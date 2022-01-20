@@ -17,4 +17,5 @@ struct Trainer {
     let day: String
     let month: String
     let year: String
+    let trainerID: String
 }

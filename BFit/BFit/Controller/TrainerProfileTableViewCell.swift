@@ -11,13 +11,14 @@ class TrainerProfileTableViewCell: UITableViewCell {
 
     @IBOutlet weak var workoutTitle: UILabel!
     @IBOutlet weak var workoutDescription: UITextView!
+//    @IBOutlet weak var durationLable: UILabel!
+//    @IBOutlet weak var priceLable: UILabel!
+    @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var durationLable: UILabel!
     @IBOutlet weak var priceLable: UILabel!
-    @IBOutlet weak var cellView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         // view inside the cell
         cellView.clipsToBounds = true
         cellView.layer.cornerRadius = 15

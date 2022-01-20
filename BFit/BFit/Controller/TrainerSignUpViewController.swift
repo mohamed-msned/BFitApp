@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import DropDown
+import SCLAlertView
 
 class TrainerSignUpViewController: UIViewController {
 
@@ -35,7 +36,7 @@ class TrainerSignUpViewController: UIViewController {
     let db = Firestore.firestore()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.hideKeyboardWhenTappedAround()
         viewLayout()
         genderDropDownLayout()
     }
@@ -131,7 +132,8 @@ class TrainerSignUpViewController: UIViewController {
                         }
                     }
             }else {
-                print(error?.localizedDescription)
+                SCLAlertView().showError("Error", subTitle: error!.localizedDescription)
+                
             }
         }
         

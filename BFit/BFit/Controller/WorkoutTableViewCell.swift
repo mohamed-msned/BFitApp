@@ -14,7 +14,7 @@ class WorkoutTableViewCell: UITableViewCell {
     @IBOutlet weak var moreInfoBtn: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
-
+    
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

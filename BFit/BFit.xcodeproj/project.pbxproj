@@ -28,6 +28,13 @@
 		04F5323C279755980023AE12 /* WorkoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F5323B279755980023AE12 /* WorkoutTableViewCell.swift */; };
 		04F5323E279756210023AE12 /* MealsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F5323D279756210023AE12 /* MealsTableViewCell.swift */; };
 		04F5324027975A400023AE12 /* Packege.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F5323F27975A400023AE12 /* Packege.swift */; };
+		04F5324227980B630023AE12 /* MoreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F5324127980B630023AE12 /* MoreInfoViewController.swift */; };
+		04F53248279816D70023AE12 /* PackegeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F53247279816D70023AE12 /* PackegeTableViewCell.swift */; };
+		04F5324A2798763C0023AE12 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F532492798763C0023AE12 /* ProfileViewController.swift */; };
+		04F5324C2799DCE10023AE12 /* scheduelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F5324B2799DCE00023AE12 /* scheduelViewController.swift */; };
+		04F5324E2799EF190023AE12 /* SubscibersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F5324D2799EF190023AE12 /* SubscibersViewController.swift */; };
+		04F532502799EF310023AE12 /* SubscribersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F5324F2799EF310023AE12 /* SubscribersTableViewCell.swift */; };
+		04F532522799F80C0023AE12 /* KeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F532512799F80C0023AE12 /* KeyboardExtension.swift */; };
 		8F8827BE47A89500E77F6C75 /* Pods_BFit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C7C19D93453C07DCB2066DA /* Pods_BFit.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +62,13 @@
 		04F5323B279755980023AE12 /* WorkoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTableViewCell.swift; sourceTree = "<group>"; };
 		04F5323D279756210023AE12 /* MealsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsTableViewCell.swift; sourceTree = "<group>"; };
 		04F5323F27975A400023AE12 /* Packege.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Packege.swift; sourceTree = "<group>"; };
+		04F5324127980B630023AE12 /* MoreInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInfoViewController.swift; sourceTree = "<group>"; };
+		04F53247279816D70023AE12 /* PackegeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackegeTableViewCell.swift; sourceTree = "<group>"; };
+		04F532492798763C0023AE12 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		04F5324B2799DCE00023AE12 /* scheduelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scheduelViewController.swift; sourceTree = "<group>"; };
+		04F5324D2799EF190023AE12 /* SubscibersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscibersViewController.swift; sourceTree = "<group>"; };
+		04F5324F2799EF310023AE12 /* SubscribersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribersTableViewCell.swift; sourceTree = "<group>"; };
+		04F532512799F80C0023AE12 /* KeyboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardExtension.swift; sourceTree = "<group>"; };
 		4D9EA14F444E24F133E45968 /* Pods-BFit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BFit.debug.xcconfig"; path = "Target Support Files/Pods-BFit/Pods-BFit.debug.xcconfig"; sourceTree = "<group>"; };
 		4F44D7A55C7C257EE802FC43 /* Pods-BFit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BFit.release.xcconfig"; path = "Target Support Files/Pods-BFit/Pods-BFit.release.xcconfig"; sourceTree = "<group>"; };
 		6C7C19D93453C07DCB2066DA /* Pods_BFit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BFit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +135,13 @@
 				04F53239279755620023AE12 /* WorkoutViewController.swift */,
 				04F5323B279755980023AE12 /* WorkoutTableViewCell.swift */,
 				04F5323D279756210023AE12 /* MealsTableViewCell.swift */,
+				04F5324127980B630023AE12 /* MoreInfoViewController.swift */,
+				04F53247279816D70023AE12 /* PackegeTableViewCell.swift */,
+				04F532492798763C0023AE12 /* ProfileViewController.swift */,
+				04F5324B2799DCE00023AE12 /* scheduelViewController.swift */,
+				04F5324D2799EF190023AE12 /* SubscibersViewController.swift */,
+				04F5324F2799EF310023AE12 /* SubscribersTableViewCell.swift */,
+				04F532512799F80C0023AE12 /* KeyboardExtension.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -278,19 +299,26 @@
 			files = (
 				04F2AE3F2792F0C800BD5D7B /* CreatePackegeViewController.swift in Sources */,
 				044CAF2F278466080042EC19 /* SignUpTraineeViewController.swift in Sources */,
+				04F5324A2798763C0023AE12 /* ProfileViewController.swift in Sources */,
 				04F5323A279755620023AE12 /* WorkoutViewController.swift in Sources */,
 				044CAF2B278466080042EC19 /* AppDelegate.swift in Sources */,
+				04F5324E2799EF190023AE12 /* SubscibersViewController.swift in Sources */,
+				04F5324C2799DCE10023AE12 /* scheduelViewController.swift in Sources */,
 				04F2AE2D2785A80F00BD5D7B /* TrainerSignUpViewController.swift in Sources */,
 				04F2AE3D278F139900BD5D7B /* TrainerProfileTableViewCell.swift in Sources */,
+				04F53248279816D70023AE12 /* PackegeTableViewCell.swift in Sources */,
 				04F5324027975A400023AE12 /* Packege.swift in Sources */,
 				04F532382796EAE80023AE12 /* Trainer.swift in Sources */,
 				04F2AE2F2785DF7C00BD5D7B /* LoginViewController.swift in Sources */,
 				04F5323E279756210023AE12 /* MealsTableViewCell.swift in Sources */,
 				044CAF2D278466080042EC19 /* SceneDelegate.swift in Sources */,
 				04F2AE332786DC3100BD5D7B /* HomeViewController.swift in Sources */,
+				04F532522799F80C0023AE12 /* KeyboardExtension.swift in Sources */,
 				04F2AE3B278C58C600BD5D7B /* TrainerProfileViewController.swift in Sources */,
 				04F532362796EA220023AE12 /* TrainerTabBarController.swift in Sources */,
 				04F2AE372786FA8400BD5D7B /* HomeTableViewCell.swift in Sources */,
+				04F5324227980B630023AE12 /* MoreInfoViewController.swift in Sources */,
+				04F532502799EF310023AE12 /* SubscribersTableViewCell.swift in Sources */,
 				04F5323C279755980023AE12 /* WorkoutTableViewCell.swift in Sources */,
 				04F2AE352786E18A00BD5D7B /* TraineeTabBarController.swift in Sources */,
 			);

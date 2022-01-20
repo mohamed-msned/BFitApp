@@ -38,6 +38,7 @@ class CreatePackegeViewController: UIViewController {
     
     let priceDropDown = DropDown()
     let durationDropDown = DropDown()
+    
     let priceDropDownValues = [
         "200SR", "300SR", "400SR", "500SR", "600SR", "700SR", "800SR", "900SR", "1000SR", "1300SR", "1500SR", "2000SR", "3000SR"
     ]
@@ -47,9 +48,13 @@ class CreatePackegeViewController: UIViewController {
     
     var dayCounter = 1
     let db = Firestore.firestore()
+    let uid = UUID().uuidString
+    var delegeate : updatePackageDelegate?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.hideKeyboardWhenTappedAround()
         priceDropDownLayout()
         durationDropDownLayout()
         
@@ -152,8 +157,11 @@ class CreatePackegeViewController: UIViewController {
         }else {
         if dayCounter < 8 {
             // take data
+            
+           
+            
         db.collection("Packeges")
-            .document(packegeNameTextfield.text!)
+            .document(uid)
             .setData([
                 "name": packegeNameTextfield.text!,
                 "description": packegeDescriptionTextView.text!,
@@ -162,12 +170,18 @@ class CreatePackegeViewController: UIViewController {
                 "day \(dayCounter) workout title": workoutTitleTextView.text!,
                 "day \(dayCounter) workout description": workoutDescriptionTextView.text!,
                 "day \(dayCounter) meals title": mealsTitleTextView.text!,
-                "day \(dayCounter) meals description": mealsdescriptionTextView.text!
+                "day \(dayCounter) meals description": mealsdescriptionTextView.text!,
+                "userID": Auth.auth().currentUser!.uid,
+                "packageID" : uid
+                
+                
             ],merge: true) { err in
                 if let err = err {
                     print("Error when adding \(err.localizedDescription)")
                 }else {
                     print("document added")
+                    
+                    
                 }
             }
 
@@ -180,11 +194,21 @@ class CreatePackegeViewController: UIViewController {
             }else {
                 SCLAlertView().showSuccess("your packege has been completed", subTitle: "you can add new packege!")
 
+                let tempPackage = Packege(packegeDescription: packegeDescriptionTextView.text!, name: packegeNameTextfield.text!, duration: durationDropDownTitle.text!, price: priceDropDownTitle.text!, trainerID: "", packegeID: "", day1WorkoutTitle: "", day1Workout: "", day1MealsTitle: "", day1MeaksDescription: "", day2WorkoutTitle: "", day2Workout: "", day2MealsTitle: "", day2MeaksDescription: "", day3WorkoutTitle: "", day3Workout: "", day3MealsTitle: "", day3MeaksDescription: "", day4WorkoutTitle: "", day4Workout: "", day4MealsTitle: "", day4MeaksDescription: "", day5WorkoutTitle: "", day5Workout: "", day5MealsTitle: "", day5MeaksDescription: "", day6WorkoutTitle: "", day6Workout: "", day6MealsTitle: "", day6MeaksDescription: "", day7WorkoutTitle: "", day7Workout: "", day7MealsTitle: "", day7MeaksDescription: "")
+                
+                
+                delegeate!.updateTable(newPackage: tempPackage)
+                dismiss(animated: true, completion: nil)
+                
                 packegeNameTextfield.text = ""
                 packegeDescriptionTextView.text = ""
                 priceDropDownTitle.text = "Choose price"
                 durationDropDownTitle.text = "Choose duration"
 
+                
+                
+                
+                
             }
             // set textfields to empty
             workoutTitleTextView.text = ""
@@ -193,10 +217,16 @@ class CreatePackegeViewController: UIViewController {
             mealsdescriptionTextView.text = ""
             
             //change placeholders
-            dayWorkoutTitleLable.text = "day \(dayCounter) workout title"
-            dayWorkoutDescriptionLable.text = "day \(dayCounter) workout"
-            dayMealsTitleLable.text = "day \(dayCounter) meals title"
-            dayMealsDescriptionLable.text = "day \(dayCounter) meals"
+            dayWorkoutTitleLable.text = "day \(dayCounter)"
+            dayWorkoutDescriptionLable.text = "day \(dayCounter)"
+            dayMealsTitleLable.text = "day \(dayCounter)"
+            dayMealsDescriptionLable.text = "day \(dayCounter)"
+        }else{
+            
+            
+            
+            
+            
         }
 
         }
@@ -210,3 +240,6 @@ class CreatePackegeViewController: UIViewController {
 
 
 
+protocol updatePackageDelegate {
+    func updateTable (newPackage: Packege)
+}
