@@ -58,11 +58,24 @@ class CreatePackegeViewController: UIViewController {
         priceDropDownLayout()
         durationDropDownLayout()
         
+        packegeDescriptionTextView.text = "package description"
+        packegeDescriptionTextView.textColor = .lightGray
+        packegeDescriptionTextView.delegate = self
+        
+        workoutTitleTextView.text = "day \(dayCounter)"
+        workoutTitleTextView.textColor = .lightGray
+        workoutTitleTextView.delegate = self
+        
+        
+        workoutDescriptionTextView.text = "day \(dayCounter)"
+        workoutDescriptionTextView.textColor = .lightGray
+        workoutDescriptionTextView.delegate = self
+        
         // scheduel lables
-        dayWorkoutTitleLable.text = "day \(dayCounter) workout title"
-        dayWorkoutDescriptionLable.text = "day \(dayCounter) workout"
-        dayMealsTitleLable.text = "day \(dayCounter) meals title"
-        dayMealsDescriptionLable.text = "day \(dayCounter) meals"
+//        dayWorkoutTitleLable.text = "day \(dayCounter) workout title"
+//        dayWorkoutDescriptionLable.text = "day \(dayCounter) workout"
+//        dayMealsTitleLable.text = "day \(dayCounter) meals title"
+//        dayMealsDescriptionLable.text = "day \(dayCounter) meals"
         
         // design
         viewLayout()
@@ -242,4 +255,31 @@ class CreatePackegeViewController: UIViewController {
 
 protocol updatePackageDelegate {
     func updateTable (newPackage: Packege)
+}
+extension CreatePackegeViewController: UITextViewDelegate {
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.text = nil
+            textView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        
+        if textView.text.isEmpty {
+            if textView == packegeDescriptionTextView{
+            textView.text = "package description"
+            }
+            if textView == workoutTitleTextView{
+            textView.text = "day \(dayCounter)"
+            }
+            if textView == workoutDescriptionTextView{
+            textView.text = "day \(dayCounter)"
+            }
+            textView.textColor = UIColor.lightGray
+        
+        }
+        
+    }
 }

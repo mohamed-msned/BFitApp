@@ -14,6 +14,8 @@
 		044CAF34278466150042EC19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 044CAF33278466150042EC19 /* Assets.xcassets */; };
 		044CAF37278466150042EC19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044CAF35278466150042EC19 /* LaunchScreen.storyboard */; };
 		044CAF3F27846FE80042EC19 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 044CAF3E27846FE80042EC19 /* GoogleService-Info.plist */; };
+		04D0363E279EA299009634D0 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0363D279EA299009634D0 /* LaunchViewController.swift */; };
+		04D03640279EA940009634D0 /* lf30_editor_jxmiglyw.json in Resources */ = {isa = PBXBuildFile; fileRef = 04D0363F279EA940009634D0 /* lf30_editor_jxmiglyw.json */; };
 		04F2AE2D2785A80F00BD5D7B /* TrainerSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F2AE2C2785A80F00BD5D7B /* TrainerSignUpViewController.swift */; };
 		04F2AE2F2785DF7C00BD5D7B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F2AE2E2785DF7C00BD5D7B /* LoginViewController.swift */; };
 		04F2AE332786DC3100BD5D7B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F2AE322786DC3100BD5D7B /* HomeViewController.swift */; };
@@ -48,6 +50,8 @@
 		044CAF36278466150042EC19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		044CAF38278466150042EC19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		044CAF3E27846FE80042EC19 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		04D0363D279EA299009634D0 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		04D0363F279EA940009634D0 /* lf30_editor_jxmiglyw.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lf30_editor_jxmiglyw.json; sourceTree = "<group>"; };
 		04F2AE2C2785A80F00BD5D7B /* TrainerSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainerSignUpViewController.swift; sourceTree = "<group>"; };
 		04F2AE2E2785DF7C00BD5D7B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		04F2AE322786DC3100BD5D7B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +146,7 @@
 				04F5324D2799EF190023AE12 /* SubscibersViewController.swift */,
 				04F5324F2799EF310023AE12 /* SubscribersTableViewCell.swift */,
 				04F532512799F80C0023AE12 /* KeyboardExtension.swift */,
+				04D0363D279EA299009634D0 /* LaunchViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -151,6 +156,7 @@
 			children = (
 				04F532372796EAE80023AE12 /* Trainer.swift */,
 				04F5323F27975A400023AE12 /* Packege.swift */,
+				04D0363F279EA940009634D0 /* lf30_editor_jxmiglyw.json */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -244,6 +250,7 @@
 				044CAF37278466150042EC19 /* LaunchScreen.storyboard in Resources */,
 				044CAF3F27846FE80042EC19 /* GoogleService-Info.plist in Resources */,
 				044CAF34278466150042EC19 /* Assets.xcassets in Resources */,
+				04D03640279EA940009634D0 /* lf30_editor_jxmiglyw.json in Resources */,
 				044CAF32278466080042EC19 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,6 +320,7 @@
 				04F5323E279756210023AE12 /* MealsTableViewCell.swift in Sources */,
 				044CAF2D278466080042EC19 /* SceneDelegate.swift in Sources */,
 				04F2AE332786DC3100BD5D7B /* HomeViewController.swift in Sources */,
+				04D0363E279EA299009634D0 /* LaunchViewController.swift in Sources */,
 				04F532522799F80C0023AE12 /* KeyboardExtension.swift in Sources */,
 				04F2AE3B278C58C600BD5D7B /* TrainerProfileViewController.swift in Sources */,
 				04F532362796EA220023AE12 /* TrainerTabBarController.swift in Sources */,
